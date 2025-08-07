@@ -4,7 +4,7 @@
 import { useParams } from "next/navigation";
 import Message from "../Components/Message";
  // adjust import path if needed
- export const dynamic = "force-dynamic";
+ import { Suspense } from "react";
 
 const MessagePage = () => {
   const params = useParams();
@@ -18,4 +18,12 @@ const MessagePage = () => {
   );
 };
 
-export default MessagePage;
+const WrappedMessagePage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MessagePage />
+    </Suspense>
+  );
+};
+
+export default WrappedMessagePage;
