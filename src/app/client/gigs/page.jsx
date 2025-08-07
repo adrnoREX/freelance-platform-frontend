@@ -1,11 +1,14 @@
-'use client'
-import React from 'react';
+'use client';
+import React, { Suspense } from 'react';
 import Gigs from '../components/Gigs';
-// import GigDetailPage from '../components/GigDetailPage';
 
 
 const ClientGigsPage = () => {
-  return <Gigs />;
+  return (
+    <Suspense fallback={<div>Loading gigs...</div>}>
+      <Gigs />
+    </Suspense>
+  );
 };
 
 export default ClientGigsPage;
