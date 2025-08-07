@@ -1,21 +1,10 @@
-// "use client"
-// import React from 'react'
-// import Messages from '../Components/Messages'
 
-// function page() {
-//   return (
-//     <>
-//     <Messages />
-//     </>
-//   )
-// }
-
-// export default page
 
 "use client";
 import { useParams } from "next/navigation";
 import Message from "../Components/Message";
  // adjust import path if needed
+ export const dynamic = "force-dynamic";
 
 const MessagePage = () => {
   const params = useParams();
