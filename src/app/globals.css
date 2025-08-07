@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+    
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  
+  
+}
+
+/* .slick-prev, .slick-next {
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  /* border-radius: 50% !important; */
+  /* display: flex !important;
+  justify-content: center !important;
+  align-items: center !important; */
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important; */
+
+
+.slick-prev:before, .slick-next:before {
+  color: black !important;
+  font-size: 20px !important;
+}
