@@ -14,8 +14,8 @@ import toast from "react-hot-toast";
 const GigDetailPage = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const params = useParams(); // for dynamic route params
-  const searchParams = useSearchParams(); // for query string
+  const params = useParams();
+  const searchParams = useSearchParams(); 
   const { id: gigId } = useParams();
   const router = useRouter();
   useEffect(() => {
@@ -94,7 +94,6 @@ const GigDetailPage = () => {
 
   const handleContact = () => {
     const gigId = gig?._id;
-    // const freelancerId = gig?.userId;
     const freelancerId = gig?.userId
   
     if (!gigId || !freelancerId) return;
@@ -127,13 +126,11 @@ const GigDetailPage = () => {
         &gt; Gig Detail
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 px-20 pb-13 gap-10">
-        {/* LEFT SIDE – Gig Content */}
         <div className="lg:col-span-2 space-y-6">
           <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">
             {gig.category}
           </h1>
 
-          {/* Image Slider */}
           {gig.images?.length > 0 && (
             <div className="relative max-w-[120vh] max-h-[120vh] overflow-hidden rounded-lg shadow">
               <Image1
@@ -163,7 +160,6 @@ const GigDetailPage = () => {
             </div>
           )}
 
-          {/* About This Gig */}
           <div className="space-y-4 text-gray-700 text-[15px]">
             <h2 className="text-xl font-semibold text-gray-800">
               About This Gig
@@ -171,7 +167,6 @@ const GigDetailPage = () => {
             <p>{gig.desc}</p>
           </div>
 
-          {/* Freelancer Info Block */}
           <div className="border border-gray-300 max-w-[120vh] rounded-lg ">
             <h2 className="text-lg font-semibold px-4 py-4 text-gray-800 mb-2">
               About the Freelancer
@@ -207,7 +202,6 @@ const GigDetailPage = () => {
           <Reviews gigId={gigId} />
         </div>
 
-        {/* RIGHT SIDE – Gig Details */}
         <div className="bg-gray-50 rounded-xl p-6 w-[100%] shadow space-y-4 h-fit">
           <h2 className="text-xl font-bold text-gray-800">Gig Info</h2>
           <div className="space-y-2 flex justify-between">
