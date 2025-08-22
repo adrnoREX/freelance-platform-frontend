@@ -8,16 +8,16 @@ const AddGig = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [category, setCategory] = useState("");
-  const [skills, setSkills] = useState(""); // comma-separated string
+  const [skills, setSkills] = useState(""); 
   const [price, setPrice] = useState("");
   const [deliveryTime, setDeliveryTime] = useState("");
   const [revisionNumber, setRevisionNumber] = useState("");
-  const [tags, setTags] = useState(""); // comma-separated string
+  const [tags, setTags] = useState(""); 
   const [cover, setCover] = useState(null);
   const [images, setImages] = useState([]);
   const [shortTitle, setShortTitle] = useState("");
   const [shortDesc, setShortDesc] = useState("");
-  const [features, setFeatures] = useState(""); // comma-separated string
+  const [features, setFeatures] = useState(""); 
 
   const router = useRouter();
 
@@ -69,7 +69,7 @@ const AddGig = () => {
 
     const user = JSON.parse(localStorage.getItem("currentUser"));
     try {
-      //   const token = JSON.parse(localStorage.getItem("currentUser")).token;
+
       
       const token = user.token;
 
