@@ -41,7 +41,7 @@ function Navbar() {
     }
   };
 
-  // Safe handleContinue: if a gig object is passed, navigate with query, otherwise go to /orders
+  
   const handleContinue = (gig) => {
     if (gig && gig.title) {
       router.push(
@@ -150,7 +150,6 @@ function Navbar() {
         }`}
       >
         <div className="flex flex-col p-6 space-y-6">
-          {/* Close Button */}
           <button onClick={() => setMenuOpen(false)} className="self-end text-2xl font-bold">
             ✕
           </button>
@@ -166,7 +165,6 @@ function Navbar() {
               </div>
             )}
 
-            {/* USER INFO / LOGIN */}
             {!loading &&
               (currentUser ? (
                 <div className="flex flex-col gap-4">
@@ -207,5 +205,6 @@ function Navbar() {
     </>
   );
 }
+
 
 export default Navbar;
