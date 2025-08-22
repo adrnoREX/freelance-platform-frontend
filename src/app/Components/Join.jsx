@@ -52,10 +52,10 @@ function Step1({ data, onChange, onNext, file, setFile }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    onChange(e); // Update parent state
+    onChange(e); 
 
     if (name === "username") {
-      setUsernameError(""); // Clear existing error before new check
+      setUsernameError(""); 
       if (value.trim() === "") {
         setUsernameError("");
       } else {
@@ -64,7 +64,7 @@ function Step1({ data, onChange, onNext, file, setFile }) {
     }
 
     if (name === "email") {
-      setEmailError(""); // Clear existing error before new check
+      setEmailError("");
       if (value.trim() === "") {
         setEmailError("");
       } else {
@@ -476,22 +476,14 @@ function Step6({ data, onSubmitFinal, onClose }) {
 
   const handleGetStarted = async () => {
     await onSubmitFinal();
-    // router.push("/freelancer/setup"); // Main dashboard
-    // toast.success("Signup Successful!")
     setTimeout(() => {
       router.push("/freelancer/profile");
     }, 1000);
-    onClose(); // Close modal from parent
+    onClose();
   };
 
   return (
     <div className="flex flex-col items-center justify-center h-full space-y-6 mt-20 mb-20">
-      {/* <button
-        onClick={onBack}
-        className="py-2 px-4 border bg-black text-white hover:bg-gray-900 rounded-sm"
-      >
-        Back
-      </button> */}
       <h2 className="text-3xl font-bold">Welcome, {data.username}!</h2>
       {data.role === "freelancer" ? (
         <>
@@ -608,13 +600,11 @@ export default function JoinOnboarding() {
     }
 
     try {
-      // Register user
       await axios.post("http://localhost:8800/api/auth/register", formData, {
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
       });
 
-      // Login after register
       const loginRes = await axios.post(
         "http://localhost:8800/api/auth/login",
         {
@@ -624,12 +614,10 @@ export default function JoinOnboarding() {
         { withCredentials: true }
       );
 
-      // Save user to localStorage
       localStorage.setItem("currentUser", JSON.stringify(loginRes.data));
     } catch (err) {
       console.error("Signup/Login error", err);
 
-      // Check if the error is due to duplicate user
       if (
         err.response &&
         err.response.data &&
@@ -642,7 +630,7 @@ export default function JoinOnboarding() {
         toast.error(err.response?.data?.message || "Signup/Login failed");
       }
 
-      return; // stop execution so Step6 doesn't proceed
+      return; 
     }
   };
 
@@ -652,7 +640,6 @@ export default function JoinOnboarding() {
         Join
       </button>
 
-      {/* Join Modal */}
       <dialog id="join_modal" className="modal">
         <div className="modal-box relative p-0 max-w-[120vh] max-h-[100vh]">
           <button
