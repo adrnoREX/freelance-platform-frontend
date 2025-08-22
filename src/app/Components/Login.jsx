@@ -22,14 +22,14 @@ function Login() {
   });
   const [file, setFile] = useState(null);
 
-  // Clear login form fields
+  
   const clearLoginFields = () => {
     setUsername("");
     setPassword("");
     setError(null);
   };
 
-  // Reset join/signup form
+  
   const resetJoinForm = () => {
     setUser({
       username: "",
@@ -42,7 +42,6 @@ function Login() {
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
-  // Handle login
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -77,7 +76,6 @@ function Login() {
     }
   };
 
-  // Handle signup
   const handleJoinSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData();
@@ -104,7 +102,6 @@ function Login() {
 
   return (
     <div>
-      {/* Trigger Button */}
       <div
         className="hover:underline cursor-pointer  sm:pb-0 pb-4"
         onClick={() => document.getElementById("login_modal")?.showModal()}
@@ -112,7 +109,6 @@ function Login() {
         Sign in
       </div>
 
-      {/* Login Modal */}
       <dialog id="login_modal" className="modal">
         <div className="modal-box p-0 rounded-xl max-w-[120vh] max-h-[100vh]">
           <form>
@@ -128,14 +124,12 @@ function Login() {
             </button>
 
             <div className="flex">
-              {/* Left image */}
               <img
                 src="/login1.jpg"
                 alt="login illustration"
                 className="max-h-[90vh] max-w-[120vh] sm:block hidden mt-0.4"
               />
 
-              {/* Login Form */}
               <div className="flex flex-col sm:mx-18 mt-40 mx-6 text-start">
                 <h3 className="font-bold text-2xl sm:w-80 mb-2">
                   Sign in to your account
@@ -173,7 +167,6 @@ function Login() {
                     Login
                   </button>
 
-                  {/* Error Message */}
                   {error && (
                     <div className="text-gray-500 text-sm mt-2">
                       {typeof error === "string"
