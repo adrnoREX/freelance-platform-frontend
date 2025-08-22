@@ -17,7 +17,6 @@ function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Scroll effect
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedUser = localStorage.getItem("currentUser");
@@ -73,12 +72,10 @@ function Navbar() {
       }`}
     >
       <div className="w-full max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="text-3xl font-bold flex items-center gap-1">
           Freelancer<span className="text-[#1dbf73]">.</span>
         </Link>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-6 font-medium underline-offset-8">
           <span className="cursor-pointer hover:underline">Freelancer Business</span>
           <span className="cursor-pointer hover:underline">Explore</span>
@@ -153,7 +150,6 @@ function Navbar() {
           )}
         </div>
 
-        {/* Mobile Menu Icon */}
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setOpen(!open)}
@@ -164,7 +160,6 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
       {open && (
         <div className="md:hidden px-4 py-3 space-y-2 bg-white text-black">
           <div className="flex flex-col gap-2 cursor-pointer font-medium">
@@ -197,7 +192,6 @@ function Navbar() {
         </div>
       )}
 
-      {/* Category Nav */}
       {(active || pathname !== "/") && (
         <>
           <hr className="border-gray-200" />
