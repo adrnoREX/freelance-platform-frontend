@@ -35,12 +35,11 @@ function Gig() {
         "Something went wrong!"
       ) : (
         <div className="w-full max-w-[1400px] flex gap-12">
-          {/* Left Section */}
           <div className="flex-[2] flex flex-col gap-6">
             <span className="uppercase text-sm text-gray-600 font-light">Freelancer &gt; Graphics & Design &gt;</span>
             <h1 className="text-2xl font-semibold">{data.title}</h1>
 
-            {/* Seller Info */}
+  
             {isLoadingUser ? (
               "loading"
             ) : errorUser ? (
@@ -68,7 +67,6 @@ function Gig() {
               </div>
             )}
 
-            {/* Slider */}
             <div className="bg-gray-100">
               <Slider slidesToShow={1} arrowsScroll={1}>
                 {data.images.map((img) => (
@@ -80,7 +78,6 @@ function Gig() {
             <h2 className="text-xl font-medium">About This Gig</h2>
             <p className="text-gray-600 font-light leading-6">{data.desc}</p>
 
-            {/* About Seller */}
             {isLoadingUser ? (
               "loading"
             ) : errorUser ? (
