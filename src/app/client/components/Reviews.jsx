@@ -40,7 +40,6 @@ const Reviews = ({ gigId }) => {
         data.map((review) => <Review key={review._id} review={review} />)
       )}
 
-      {/* Add Review Form */}
       <div className="mt-6 flex flex-col gap-6">
         <h3 className="text-lg font-medium">Add a review</h3>
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
