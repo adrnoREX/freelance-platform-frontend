@@ -43,7 +43,6 @@ const Searchbar = forwardRef(({ onSearch }, ref) => {
     }
   };
 
-  // Expose a function to parent via ref
   useImperativeHandle(ref, () => ({
     setQueryExternally: (value) => {
       setQuery(value);
@@ -95,5 +94,6 @@ const Searchbar = forwardRef(({ onSearch }, ref) => {
     </div>
   );
 });
+
 
 export default Searchbar;
