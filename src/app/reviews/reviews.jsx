@@ -6,11 +6,11 @@ import Review from "./review";
 const Reviews = ({ gigId }) => {
   const queryClient = useQueryClient();
 
-  // ✅ Prevent running query if gigId is not available
+  
   const { isLoading, error, data } = useQuery({
     queryKey: ["reviews"],
     queryFn: () =>
-        newRequest.get(`/review/${gigId}`).then((res) => res.data), // only run if gigId is truthy
+        newRequest.get(`/review/${gigId}`).then((res) => res.data),
   });
 
   const mutation = useMutation({
@@ -28,7 +28,6 @@ const Reviews = ({ gigId }) => {
     e.target.reset();
   };
 
-  // ✅ Debugging logs
   console.log("Gig ID in Reviews.jsx:", gigId);
   console.log("Is data an array?", Array.isArray(data));
   console.log("Data content:", data);
