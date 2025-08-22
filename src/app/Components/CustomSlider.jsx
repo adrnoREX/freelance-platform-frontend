@@ -45,7 +45,6 @@ function CustomSlider({ items }) {
         {items.map((item, index) => (
           <div key={index} className="px-2">
             <div className="relative w-43 h-60 overflow-hidden shadow-md">
-              {/* Image */}
               {item.image && (
                 <img
                   src={item.image}
@@ -54,7 +53,6 @@ function CustomSlider({ items }) {
                 />
               )}
 
-              {/* Name overlay */}
               <div className="absolute bottom-0 left-0 right-0  bg-opacity-100 font-stretch-100% text-white backdrop-blur-3xl text-center py-2 text-sm font-semibold">
                 {item.name}
               </div>
@@ -67,3 +65,4 @@ function CustomSlider({ items }) {
 }
 
 export default CustomSlider;
+
