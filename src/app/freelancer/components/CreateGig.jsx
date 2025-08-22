@@ -131,7 +131,6 @@ const CreateGig = ({ gigData, setGigData, profileData, onBack }) => {
                 alt={`gig-${idx}`}
                 className="w-full h-full object-cover"
               />
-              {/* Delete Icon */}
               <button
                 type="button"
                 onClick={() => {
